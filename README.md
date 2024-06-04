@@ -34,5 +34,21 @@ install nodejs from the plugin to make it available
 
 # Make docker available on jenkins server
 
+mount docker from droplet into the jenkins container as volume
+stop running containers
+run
+docker run -p 8080:8080 -p 50000:50000 -v jenkins_home:/var/jenkins_home 
+-v /var/run/docker.sock:/var/run/docker.sock jenkins/jenkins:lts
+
+enter the jenkins container
+download docker with the curl command
+(curl https://get.docker.com/ >dockerinstall && chmod 777 dockerinstall && /dockerinstall
+
+add readwrite permission to (/var/run/docker.sock) file
+chmod 666 /var/run/docker.sock
+
+
+
+
 
 
