@@ -14,5 +14,5 @@ def buildImage(){
     sh "echo $PASSWORD | docker login -u $USERNAME --password-stdin"
     sh "docker push nanaot/java-maven:2.1"
 
-
 }
+return this
